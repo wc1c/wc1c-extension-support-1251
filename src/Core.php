@@ -48,7 +48,7 @@ final class Core extends ExtensionAbstract
 
 		unload_textdomain('wc1c-support-1251');
 		load_textdomain('wc1c-support-1251', WP_LANG_DIR . '/plugins/wc1c-support-1251-' . $locale . '.mo');
-		load_textdomain('wc1c-support-1251', WC1C_EXTENSION_EXTRASYNC_PRODUCTS_DIR . '/languages/wc1c-support-1251-' . $locale . '.mo');
+		load_textdomain('wc1c-support-1251', WC1C_EXTENSION_SUPPORT_1251_DIR . '/languages/wc1c-support-1251-' . $locale . '.mo');
 	}
 
 	/**
