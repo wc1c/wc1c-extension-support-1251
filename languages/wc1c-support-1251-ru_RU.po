@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WC1C > extension - Support Windows-1251\n"
-"POT-Creation-Date: 2022-01-26 15:44+0300\n"
-"PO-Revision-Date: 2022-01-26 15:45+0300\n"
+"POT-Creation-Date: 2022-01-26 19:51+0300\n"
+"PO-Revision-Date: 2022-01-26 19:52+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -21,6 +21,24 @@ msgstr ""
 "_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: src/Core.php:99 wc1c-extension-support-1251.php:81
+msgid "Support Windows-1251"
+msgstr "Поддержка Windows-1251"
+
+#: src/Core.php:101
+msgid "Check the checkbox to enable support. Disabled by default."
+msgstr "Установите флажок, чтобы включить поддержку. Отключено по умолчанию."
+
+#: src/Core.php:102
+msgid ""
+"Data from utf-8 encoding will be converted to Windows-1251 encoding. Should "
+"be used for compatibility with older versions of 1C that do not support "
+"modern encodings."
+msgstr ""
+"Данные из кодировки utf-8 будут преобразованы в кодировку Windows-1251. "
+"Следует использовать для совместимости со старыми версиями 1С, не "
+"поддерживающими современные кодировки."
 
 #. Plugin Name of the plugin/theme
 msgid "WC1C > extension - Support Windows-1251"
