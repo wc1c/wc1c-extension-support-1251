@@ -147,7 +147,7 @@ final class Core extends ExtensionAbstract
 
 			$array = array_merge
 			(
-				array_slice($array, 1, $pos),
+				array_slice($array, 0, $pos),
 				$insert,
 				array_slice($array, $pos)
 			);
