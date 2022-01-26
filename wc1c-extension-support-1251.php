@@ -31,8 +31,8 @@ function wc1c_extension_support_1251_init($extensions)
 		return $extensions;
 	}
 
-	define('WC1C_EXTENSION_EXTRASYNC_PRODUCTS_DIR', __DIR__);
-	define('WC1C_EXTENSION_EXTRASYNC_PRODUCTS_PLUGIN_URL', plugin_dir_url(__FILE__));
+	define('WC1C_EXTENSION_SUPPORT_1251_DIR', __DIR__);
+	define('WC1C_EXTENSION_SUPPORT_1251_PLUGIN_URL', plugin_dir_url(__FILE__));
 
 	wc1c()->loader()->addNamespace('Wc1c\Extensions\Support1251', __DIR__ . '/src');
 
