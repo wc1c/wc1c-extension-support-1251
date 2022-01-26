@@ -96,10 +96,10 @@ final class Core extends ExtensionAbstract
 	{
 		$fields['support_1251'] =
 		[
-			'title' => __('Поддержка Windows-1251', 'wc1c-support-1251'),
+			'title' => __('Support Windows-1251', 'wc1c-support-1251'),
 			'type' => 'checkbox',
-			'label' => __('Отметьте чекбокс, если необходимо включить данную возможность. По умолчанию выключена.', 'wc1c-support-1251'),
-			'description' => __('При включении настройки, данные из кодировки utf-8 будут конвертироваться в кодировку Windows-1251. Следует использовать для совместимости со старыми версиями 1С, которые не поддерживают современные кодировки.', 'wc1c-support-1251'),
+			'label' => __('Check the checkbox to enable support. Disabled by default.', 'wc1c-support-1251'),
+			'description' => __('Data from utf-8 encoding will be converted to Windows-1251 encoding. Should be used for compatibility with older versions of 1C that do not support modern encodings.', 'wc1c-support-1251'),
 			'default' => 'no'
 		];
 
