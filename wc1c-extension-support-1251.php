@@ -78,7 +78,7 @@ function wc1c_extension_support_1251_init($extensions)
 	$extension->setMeta('version_wc1c_min', $plugin_data['RequiresWC1C']);
 	$extension->setMeta('version_wc1c_max', $plugin_data['TestedWC1C']);
 	$extension->setMeta('author', __($plugin_data['Author'], 'wc1c-support-1251'));
-	$extension->setMeta('name', __($plugin_data['Name'], 'wc1c-support-1251'));
+	$extension->setMeta('name', __('Support Windows-1251', 'wc1c-support-1251'));
 	$extension->setMeta('description', __($plugin_data['Description'], 'wc1c-support-1251'));
 
 	$extensions[$extension_id] = $extension;
