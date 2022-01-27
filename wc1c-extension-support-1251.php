@@ -45,41 +45,10 @@ function wc1c_extension_support_1251_init($extensions)
 		return $extensions;
 	}
 
-	$extension->localization();
-
-	$default_headers =
-	[
-		'Name' => 'Plugin Name',
-		'PluginURI' => 'Plugin URI',
-		'Version' => 'Version',
-		'Description' => 'Description',
-		'Author' => 'Author',
-		'AuthorURI' => 'Author URI',
-		'TextDomain' => 'Text Domain',
-		'DomainPath' => 'Domain Path',
-		'Network' => 'Network',
-		'RequiresWP' => 'Requires at least',
-		'RequiresPHP' => 'Requires PHP',
-		'RequiresWC' => 'WC requires at least',
-		'TestedWC' => 'WC tested up to',
-		'RequiresWC1C' => 'Requires WC1C',
-		'TestedWC1C' => 'WC1C tested up to',
-	];
-
-	$plugin_data = get_file_data(__FILE__, $default_headers, 'plugin');
-
 	$extension->setId($extension_id);
-
-	$extension->setMeta('version', $plugin_data['Version']);
-	$extension->setMeta('version_php_min', $plugin_data['RequiresPHP']);
-	$extension->setMeta('version_wp_min', $plugin_data['RequiresWP']);
-	$extension->setMeta('version_wc_min', $plugin_data['RequiresWC']);
-	$extension->setMeta('version_wc_max', $plugin_data['TestedWC']);
-	$extension->setMeta('version_wc1c_min', $plugin_data['RequiresWC1C']);
-	$extension->setMeta('version_wc1c_max', $plugin_data['TestedWC1C']);
-	$extension->setMeta('author', __($plugin_data['Author'], 'wc1c-support-1251'));
+	$extension->localization();
+	$extension->loadMetaByPlugin(__FILE__, 'wc1c-support-1251');
 	$extension->setMeta('name', __('Support Windows-1251', 'wc1c-support-1251'));
-	$extension->setMeta('description', __($plugin_data['Description'], 'wc1c-support-1251'));
 
 	$extensions[$extension_id] = $extension;
 
