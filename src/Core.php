@@ -50,7 +50,7 @@ final class Core extends ExtensionAbstract
 		if(!empty($description) && $context->core()->getOptions('support_1251', 'no') === 'yes')
 		{
 			$description = mb_convert_encoding($description, 'cp1251', 'utf-8');
-			$context->core()->log()->info('Response charset converted to Windows-1251.', ['description' => $description]);
+			$context->core()->log()->info(__('Response charset converted to Windows-1251.', 'wc1c-support-1251'));
 		}
 
 		return $description;
