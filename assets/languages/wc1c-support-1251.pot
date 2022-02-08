@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: WC1C > extension - Support Windows-1251\n"
-"POT-Creation-Date: 2022-01-26 19:51+0300\n"
+"POT-Creation-Date: 2022-02-08 15:50+0300\n"
 "PO-Revision-Date: 2022-01-26 15:44+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2\n"
-"X-Poedit-Basepath: ..\n"
+"X-Poedit-Basepath: ../..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: wc1c-extension-support-1251.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -21,7 +21,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: src/Core.php:99 wc1c-extension-support-1251.php:81
+#: src/Core.php:53
+msgid "Response charset converted to Windows-1251."
+msgstr ""
+
+#: src/Core.php:99 wc1c-extension-support-1251.php:49
 msgid "Support Windows-1251"
 msgstr ""
 
