@@ -21,5 +21,11 @@ Archive extract and upload "wc1c-extension-support-1251" to /wp-content/plugins
 
 == Changelog ==
 
+= 0.3.0 =
+* Fix: more
+
+= 0.2.0 =
+* Fix: more
+
 = 0.1.0 =
 * Init release
