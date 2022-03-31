@@ -28,13 +28,13 @@ final class Core extends ExtensionAbstract
 	{
 		if(wc1c()->context()->isAdmin('plugin'))
 		{
-			add_filter(WC1C_PREFIX . 'configurations-update_form_load_fields', [$this, 'configurations_fields_other'], 150, 1);
+			add_filter('wc1c_configurations-update_form_load_fields', [$this, 'configurations_fields_other'], 150, 1);
 		}
 
 		if(wc1c()->context()->isReceiver())
 		{
-			add_filter(WC1C_PREFIX . 'schema_productscml_receiver_send_response_by_type_description', [$this, 'filter_send_response_by_type_description'], 10, 3);
-			add_filter(WC1C_PREFIX . 'schema_productscml_receiver_send_response_by_type_headers', [$this, 'filter_send_response_by_type_headers'], 10, 3);
+			add_filter('wc1c_schema_productscml_receiver_send_response_by_type_description', [$this, 'filter_send_response_by_type_description'], 10, 3);
+			add_filter('wc1c_schema_productscml_receiver_send_response_by_type_headers', [$this, 'filter_send_response_by_type_headers'], 10, 3);
 		}
 	}
 
