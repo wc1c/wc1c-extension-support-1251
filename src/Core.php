@@ -2,7 +2,7 @@
 
 defined('ABSPATH') || exit;
 
-use Wc1c\Abstracts\ExtensionAbstract;
+use Wc1c\Extensions\Abstracts\ExtensionAbstract;
 
 /**
  * Core
@@ -121,7 +121,10 @@ final class Core extends ExtensionAbstract
 			$locale = is_admin() && function_exists('get_user_locale') ? get_user_locale() : get_locale();
 		}
 
-		$locale = apply_filters('plugin_locale', $locale, 'wc1c-support-1251');
+		if(has_filter('plugin_locale'))
+		{
+			$locale = apply_filters('plugin_locale', $locale, 'wc1c-support-1251');
+		}
 
 		unload_textdomain('wc1c-support-1251');
 		load_textdomain('wc1c-support-1251', WP_LANG_DIR . '/plugins/wc1c-support-1251-' . $locale . '.mo');
