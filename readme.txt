@@ -21,6 +21,10 @@ Archive extract and upload "wc1c-extension-support-1251" to /wp-content/plugins
 
 == Changelog ==
 
+= 0.5.0 =
+* WC1C tested up to: 0.11
+* Fix: more
+
 = 0.4.0 =
 * Requires WC1C: 0.8
 * Fix: more
