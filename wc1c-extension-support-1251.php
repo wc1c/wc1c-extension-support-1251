@@ -7,7 +7,7 @@
  * Requires at least: 4.7
  * Requires PHP: 5.6
  * Requires WC1C: 0.8
- * WC1C tested up to: 0.8
+ * WC1C tested up to: 0.11
  * Text Domain: wc1c-support-1251
  * Author: WC1C team
  * Author URI: https://wc1c.info
