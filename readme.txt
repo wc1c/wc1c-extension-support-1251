@@ -2,7 +2,7 @@
 Contributors: WC1C
 Tags: wc1c, commerceml, 1c, woocommerce, woo commerce, ecommerce, 1s, 1с, woo, woo 1c
 Requires at least: 4.7
-Tested up to: 5.9
+Tested up to: 6.0
 Requires PHP: 5.6
 Stable tag: trunk
 License: GNU General Public License v3.0
