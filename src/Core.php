@@ -2,6 +2,8 @@
 
 defined('ABSPATH') || exit;
 
+use Wc1c\Configuration;
+use Wc1c\Exceptions\Exception;
 use Wc1c\Extensions\Abstracts\ExtensionAbstract;
 
 /**
@@ -28,13 +30,29 @@ final class Core extends ExtensionAbstract
 	{
 		if(wc1c()->context()->isAdmin('plugin'))
 		{
+			$configuration_id = (int)$_GET['configuration_id'];
+
+			try
+			{
+				$configuration = new Configuration($configuration_id);
+			}
+			catch(Exception $e)
+			{
+				return;
+			}
+
+			if($configuration->getSchema() !== 'productscml')
+			{
+				return;
+			}
+
 			add_filter('wc1c_configurations-update_form_load_fields', [$this, 'configurations_fields_other'], 150, 1);
 		}
 
 		if(wc1c()->context()->isReceiver())
 		{
-			add_filter('wc1c_schema_productscml_receiver_send_response_by_type_description', [$this, 'filter_send_response_by_type_description'], 10, 3);
-			add_filter('wc1c_schema_productscml_receiver_send_response_by_type_headers', [$this, 'filter_send_response_by_type_headers'], 10, 3);
+			add_filter('wc1c_schema_productscml_receiver_send_response_by_type_description', [$this, 'filterSendResponseByTypeDescription'], 10, 3);
+			add_filter('wc1c_schema_productscml_receiver_send_response_by_type_headers', [$this, 'filterSendResponseByTypeHeaders'], 10, 3);
 		}
 	}
 
@@ -45,7 +63,7 @@ final class Core extends ExtensionAbstract
 	 *
 	 * @return string
 	 */
-	public function filter_send_response_by_type_description($description, $context, $type)
+	public function filterSendResponseByTypeDescription($description, $context, $type)
 	{
 		if(!empty($description) && $context->core()->getOptions('support_1251', 'no') === 'yes')
 		{
@@ -63,7 +81,7 @@ final class Core extends ExtensionAbstract
 	 *
 	 * @return string
 	 */
-	public function filter_send_response_by_type_headers($headers, $context, $type)
+	public function filterSendResponseByTypeHeaders($headers, $context, $type)
 	{
 		if($context->core()->getOptions('support_1251', 'no') === 'yes')
 		{
