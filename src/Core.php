@@ -28,7 +28,7 @@ final class Core extends ExtensionAbstract
 	 */
 	public function initHooks()
 	{
-		if(wc1c()->context()->isAdmin('plugin'))
+		if(isset($_GET['configuration_id']) && wc1c()->context()->isAdmin('plugin'))
 		{
 			$configuration_id = (int)$_GET['configuration_id'];
 
