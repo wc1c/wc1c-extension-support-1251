@@ -41,7 +41,7 @@ final class Core extends ExtensionAbstract
 				return;
 			}
 
-			if($configuration->getSchema() !== 'productscml')
+			if($configuration->getSchema() !== 'productscml' && $configuration->getSchema() !== 'pqcml')
 			{
 				return;
 			}
@@ -53,6 +53,9 @@ final class Core extends ExtensionAbstract
 		{
 			add_filter('wc1c_schema_productscml_receiver_send_response_by_type_description', [$this, 'filterSendResponseByTypeDescription'], 10, 3);
 			add_filter('wc1c_schema_productscml_receiver_send_response_by_type_headers', [$this, 'filterSendResponseByTypeHeaders'], 10, 3);
+
+			add_filter('wc1c_schema_pqcml_receiver_send_response_by_type_description', [$this, 'filterSendResponseByTypeDescription'], 10, 3);
+			add_filter('wc1c_schema_pqcml_receiver_send_response_by_type_headers', [$this, 'filterSendResponseByTypeHeaders'], 10, 3);
 		}
 	}
 
