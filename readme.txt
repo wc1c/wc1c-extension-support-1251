@@ -21,6 +21,9 @@ Archive extract and upload "wc1c-extension-support-1251" to /wp-content/plugins
 
 == Changelog ==
 
+= 0.6.0 =
+* Support PqCML
+
 = 0.5.1 =
 * Fix: type
 
