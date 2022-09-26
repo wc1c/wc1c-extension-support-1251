@@ -3,7 +3,7 @@
  * Plugin Name: WC1C > extension - Support Windows-1251
  * Plugin URI: https://wc1c.info/extensions/support-windows-1251
  * Description: Getting rid of incomprehensible hieroglyphs for old versions of 1C.
- * Version: 0.5.1
+ * Version: 0.6.0
  * Requires at least: 4.7
  * Requires PHP: 5.6
  * Requires WC1C: 0.8
