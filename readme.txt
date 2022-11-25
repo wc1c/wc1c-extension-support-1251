@@ -21,6 +21,9 @@ Archive extract and upload "wc1c-extension-support-1251" to /wp-content/plugins
 
 == Changelog ==
 
+= 0.7.2 =
+* Fix: critical error
+
 = 0.7.1 =
 * Requires WC1C: 0.11
 * Requires PHP: 7.0

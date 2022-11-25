@@ -85,9 +85,9 @@ final class Core extends ExtensionAbstract
 	 * @param $context
 	 * @param $type
 	 *
-	 * @return string
+	 * @return array
 	 */
-	public function filterSendResponseByTypeHeaders($headers, $context, $type): string
+	public function filterSendResponseByTypeHeaders($headers, $context, $type): array
 	{
 		if($context->core()->getOptions('support_1251', 'no') === 'yes')
 		{
