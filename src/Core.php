@@ -69,7 +69,7 @@ final class Core extends ExtensionAbstract
 	 *
 	 * @return string
 	 */
-	public function filterSendResponseByTypeDescription($description, $context, $type)
+	public function filterSendResponseByTypeDescription($description, $context, $type): string
 	{
 		if(!empty($description) && $context->core()->getOptions('support_1251', 'no') === 'yes')
 		{
@@ -87,7 +87,7 @@ final class Core extends ExtensionAbstract
 	 *
 	 * @return string
 	 */
-	public function filterSendResponseByTypeHeaders($headers, $context, $type)
+	public function filterSendResponseByTypeHeaders($headers, $context, $type): string
 	{
 		if($context->core()->getOptions('support_1251', 'no') === 'yes')
 		{
@@ -104,7 +104,7 @@ final class Core extends ExtensionAbstract
 	 *
 	 * @return array
 	 */
-	public function configurations_fields_other($fields)
+	public function configurations_fields_other($fields): array
 	{
 		$this->arrayInsert($fields, 'php_post_max_size', $this->getConfigurationFields());
 
@@ -116,7 +116,7 @@ final class Core extends ExtensionAbstract
 	 *
 	 * @return array
 	 */
-	public function getConfigurationFields()
+	public function getConfigurationFields(): array
 	{
 		$fields['support_1251'] =
 		[
@@ -135,22 +135,13 @@ final class Core extends ExtensionAbstract
 	 */
 	public function localization()
 	{
-		/** WP 5.x or later */
-		if(function_exists('determine_locale'))
-		{
-			$locale = determine_locale();
-		}
-		else
-		{
-			$locale = is_admin() && function_exists('get_user_locale') ? get_user_locale() : get_locale();
-		}
+		$locale = determine_locale();
 
 		if(has_filter('plugin_locale'))
 		{
 			$locale = apply_filters('plugin_locale', $locale, 'wc1c-support-1251');
 		}
 
-		unload_textdomain('wc1c-support-1251');
 		load_textdomain('wc1c-support-1251', WP_LANG_DIR . '/plugins/wc1c-support-1251-' . $locale . '.mo');
 		load_textdomain('wc1c-support-1251', WC1C_EXTENSION_SUPPORT_1251_DIR . '/assets/languages/wc1c-support-1251-' . $locale . '.mo');
 	}
@@ -162,7 +153,7 @@ final class Core extends ExtensionAbstract
 	 *
 	 * "@return void
 	 */
-	public function arrayInsert(&$array, $position, $insert)
+	public function arrayInsert(array &$array, $position, $insert)
 	{
 		if(is_int($position))
 		{

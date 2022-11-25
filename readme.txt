@@ -1,9 +1,9 @@
 === WC1C > extension - Support Windows-1251 ===
 Contributors: WC1C
 Tags: wc1c, commerceml, 1c, woocommerce, woo commerce, ecommerce, 1s, 1с, woo, woo 1c
-Requires at least: 4.7
-Tested up to: 6.0
-Requires PHP: 5.6
+Requires at least: 5.2
+Tested up to: 6.1
+Requires PHP: 7.0
 Stable tag: trunk
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -20,6 +20,12 @@ Getting rid of incomprehensible hieroglyphs for old versions of 1C.
 Archive extract and upload "wc1c-extension-support-1251" to /wp-content/plugins
 
 == Changelog ==
+
+= 0.7.1 =
+* Requires WC1C: 0.11
+* Requires PHP: 7.0
+* Tested up to: WordPress 6.1
+* WC1C tested up to: 0.12
 
 = 0.7.0 =
 * Support ProductsCleanerCML
