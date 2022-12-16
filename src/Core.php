@@ -2,9 +2,9 @@
 
 defined('ABSPATH') || exit;
 
-use Wc1c\Configuration;
-use Wc1c\Exceptions\Exception;
-use Wc1c\Extensions\Abstracts\ExtensionAbstract;
+use Wc1c\Main\Configuration;
+use Wc1c\Main\Exceptions\Exception;
+use Wc1c\Main\Extensions\Abstracts\ExtensionAbstract;
 
 /**
  * Core
