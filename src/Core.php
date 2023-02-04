@@ -36,12 +36,12 @@ final class Core extends ExtensionAbstract
 			{
 				$configuration = new Configuration($configuration_id);
 			}
-			catch(Exception $e)
+			catch(\Throwable $e)
 			{
 				return;
 			}
 
-			if($configuration->getSchema() !== 'productscml' && $configuration->getSchema() !== 'pqcml' && $configuration->getSchema() !== 'productscleanercml')
+			if($configuration->getSchema() !== 'productscml' && $configuration->getSchema() !== 'pqcml' && $configuration->getSchema() !== 'productscleanercml' && $configuration->getSchema() !== 'orderscml')
 			{
 				return;
 			}
@@ -59,6 +59,13 @@ final class Core extends ExtensionAbstract
 
 			add_filter('wc1c_schema_pqcml_receiver_send_response_by_type_description', [$this, 'filterSendResponseByTypeDescription'], 10, 3);
 			add_filter('wc1c_schema_pqcml_receiver_send_response_by_type_headers', [$this, 'filterSendResponseByTypeHeaders'], 10, 3);
+
+			add_filter('wc1c_schema_orderscml_receiver_send_response_by_type_description', [$this, 'filterSendResponseByTypeDescription'], 10, 3);
+			add_filter('wc1c_schema_orderscml_receiver_send_response_by_type_headers', [$this, 'filterSendResponseByTypeHeaders'], 10, 3);
+			add_filter('wc1c_schema_orderscml_handler_mode_query_orders_data', [$this, 'orderscmlHandlerModeQueryOrdersData'], 10, 2);
+			add_filter('wc1c_schema_orderscml_handler_mode_query_orders_data_headers', [$this, 'filterSendResponseOrdersHeaders'], 10, 2);
+			add_filter('wc1c_schema_orderscml_handler_mode_query_info_data', [$this, 'orderscmlHandlerModeQueryOrdersData'], 10, 2);
+			add_filter('wc1c_schema_orderscml_handler_mode_query_info_data_headers', [$this, 'filterSendResponseOrdersHeaders'], 10, 2);
 		}
 	}
 
@@ -78,6 +85,41 @@ final class Core extends ExtensionAbstract
 		}
 
 		return $description;
+	}
+
+	/**
+	 * @param $orders
+	 * @param $context
+	 *
+	 * @return mixed
+	 */
+	public function orderscmlHandlerModeQueryOrdersData($orders, $context)
+	{
+		if(!empty($orders) && $context->core()->getOptions('support_1251', 'no') === 'yes')
+		{
+			$orders = str_replace('utf-8', 'windows-1251', $orders);
+			$orders = mb_convert_encoding($orders, 'cp1251', 'utf-8');
+
+			$context->core()->log()->info(__('Orders charset converted to Windows-1251.', 'wc1c-support-1251'));
+		}
+
+		return $orders;
+	}
+
+	/**
+	 * @param $headers
+	 * @param $context
+	 *
+	 * @return array
+	 */
+	public function filterSendResponseOrdersHeaders($headers, $context): array
+	{
+		if($context->core()->getOptions('support_1251', 'no') === 'yes')
+		{
+			$headers['Content-Type'] = 'Content-Type: text/xml; charset=Windows-1251';
+		}
+
+		return $headers;
 	}
 
 	/**
