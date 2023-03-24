@@ -2,7 +2,7 @@
 Contributors: WC1C
 Tags: wc1c, commerceml, 1c, woocommerce, woo commerce, ecommerce, 1s, 1с, woo, woo 1c
 Requires at least: 5.2
-Tested up to: 6.1
+Tested up to: 6.2
 Requires PHP: 7.0
 Stable tag: trunk
 License: GNU General Public License v3.0
@@ -20,6 +20,12 @@ Getting rid of incomprehensible hieroglyphs for old versions of 1C.
 Archive extract and upload "wc1c-extension-support-1251" to /wp-content/plugins
 
 == Changelog ==
+
+= 0.10.0 =
+* WC1C tested up to: 0.20
+* Requires WC1C: 0.19
+* Tested up to: WordPress 6.2
+* Fix: more
 
 = 0.9.0 =
 * WC1C tested up to: 0.17
