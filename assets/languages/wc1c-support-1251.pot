@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: WC1C > extension - Support Windows-1251\n"
-"POT-Creation-Date: 2022-02-08 15:50+0300\n"
+"POT-Creation-Date: 2023-06-26 10:44+0300\n"
 "PO-Revision-Date: 2022-01-26 15:44+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -21,23 +21,34 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: src/Core.php:53
+#: src/Core.php:83
 msgid "Response charset converted to Windows-1251."
 msgstr ""
 
-#: src/Core.php:99 wc1c-extension-support-1251.php:49
+#: src/Core.php:102
+msgid "Orders charset converted to Windows-1251."
+msgstr ""
+
+#: src/Core.php:164 wc1c-extension-support-1251.php:49
 msgid "Support Windows-1251"
 msgstr ""
 
-#: src/Core.php:101
+#: src/Core.php:166
 msgid "Check the checkbox to enable support. Disabled by default."
 msgstr ""
 
-#: src/Core.php:102
+#: src/Core.php:170
 msgid ""
 "Data from utf-8 encoding will be converted to Windows-1251 encoding. "
 "Should be used for compatibility with older versions of 1C that do not "
 "support modern encodings."
+msgstr ""
+
+#: src/Core.php:171
+msgid ""
+"Problems with encoding compatibility can be easily described in 1C. In "
+"case of problems, there will be krakozyabry (the text will not be "
+"readable)."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
